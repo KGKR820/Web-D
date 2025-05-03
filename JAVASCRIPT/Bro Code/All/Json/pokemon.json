@@ -1,0 +1,16 @@
+[{
+    "name" : "pikachu",
+    "type" : "Electric",
+    "region" : "Kanto"
+},
+{
+   "name" : "Gengar",
+    "type" : "Dark",
+    "region" : "Kanto" 
+},
+{
+    "name" : "Greninja",
+     "type" : "Water",
+     "region" : "Kalos" 
+ }
+]
