@@ -1,0 +1,25 @@
+*{
+    padding :0;
+    border:0;
+    box-sizing:border-box;
+}
+h1{
+    text-align: center;
+}
+.whole{
+    display: flex;
+    justify-content: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.square{
+    width: 120px;
+    height: 120px;
+    border :1px solid violet;
+    display: flex;
+    justify-content: center;
+}

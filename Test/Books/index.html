@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Catalog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Book Catalog</h2>
+  <input id="title" placeholder="Title" />
+  <input id="author" placeholder="Author" />
+  <input id="genre" placeholder="Genre" />
+  <button onclick="addBook()">Add Book</button>
+
+  <h3>Books:</h3>
+  <ul id="bookList"></ul>
+
+  <script>
+    async function fetchBooks() {
+      const res = await fetch("/books");
+      const books = await res.json();
+      document.getElementById("bookList").innerHTML = books.map(b => `
+        <li>
+          "${b.title}" by ${b.author} (${b.genre})
+          <button onclick="deleteBook(${b.id})">Delete</button>
+        </li>
+      `).join("");
+    }
+
+    async function addBook() {
+      const title = document.getElementById("title").value;
+      const author = document.getElementById("author").value;
+      const genre = document.getElementById("genre").value;
+
+      await fetch("/books", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, author, genre })
+      });
+
+      fetchBooks();
+    }
+
+    async function deleteBook(id) {
+      await fetch(`/books/${id}`, { method: "DELETE" });
+      fetchBooks();
+    }
+
+    fetchBooks();
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+h3 {
+  color: blue;
+  text-decoration: underline;
+}
+button {
+  color: paleturquoise;
+  background-color: goldenrod;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.879);
+}
+/* # is used infront of a id to style it */
+#box {
+  background-color: palevioletred;
+  color: whitesmoke;
+}
+/* . is used in front of a class to style it */
+.dabba {
+  background-color: cornsilk;
+}
+p {
+  text-align: center;
+  color: cornsilk;
+  font-family: arial;
+  font-size: 20px;
+}

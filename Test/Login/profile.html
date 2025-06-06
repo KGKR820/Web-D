@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Profile</title><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <h2>User Profile</h2>
+  <p id="userInfo"></p>
+  <button onclick="logout()">Logout</button>
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) location.href = "index.html";
+    document.getElementById("userInfo").textContent = `Welcome, ${user.username}`;
+
+    function logout() {
+      localStorage.removeItem("user");
+      location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

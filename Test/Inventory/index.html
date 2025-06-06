@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventory Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Inventory Manager</h2>
+  <input id="name" placeholder="Item name" />
+  <input id="qty" type="number" placeholder="Quantity" />
+  <select id="status">
+    <option>Available</option>
+    <option>Out of Stock</option>
+  </select>
+  <button onclick="addItem()">Add</button>
+
+  <h3>Items:</h3>
+  <ul id="itemList"></ul>
+
+  <script>
+    async function fetchItems() {
+      const res = await fetch("/items");
+      const items = await res.json();
+      document.getElementById("itemList").innerHTML = items.map(item => `
+        <li>
+          ${item.name} (${item.quantity}) - ${item.status}
+          <button onclick="deleteItem(${item.id})">Delete</button>
+        </li>
+      `).join("");
+    }
+
+    async function addItem() {
+      const name = document.getElementById("name").value;
+      const quantity = document.getElementById("qty").value;
+      const status = document.getElementById("status").value;
+      await fetch("/items", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, quantity, status })
+      });
+      fetchItems();
+    }
+
+    async function deleteItem(id) {
+      await fetch(`/items/${id}`, { method: "DELETE" });
+      fetchItems();
+    }
+
+    fetchItems();
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Student Manager</h2>
+  <input id="name" placeholder="Name" />
+  <input id="age" type="number" placeholder="Age" />
+  <input id="course" placeholder="Course" />
+  <button onclick="addStudent()">Add Student</button>
+
+  <h3>Students:</h3>
+  <ul id="studentList"></ul>
+
+  <script>
+    async function fetchStudents() {
+      const res = await fetch("/students");
+      const students = await res.json();
+      const list = document.getElementById("studentList");
+      list.innerHTML = students.map(s => `
+        <li>
+          ${s.name} (${s.age}) - ${s.course}
+          <button onclick="deleteStudent(${s.id})">Delete</button>
+        </li>
+      `).join("");
+    }
+
+    async function addStudent() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+      const course = document.getElementById("course").value;
+      await fetch("/students", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, age, course })
+      });
+      fetchStudents();
+    }
+
+    async function deleteStudent(id) {
+      await fetch(`/students/${id}`, { method: "DELETE" });
+      fetchStudents();
+    }
+
+    fetchStudents();
+  </script>
+</body>
+</html>

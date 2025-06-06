@@ -1,0 +1,36 @@
+body{
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    width: 100vw;
+
+    
+}
+
+h1{
+    font-size: 75px;
+}
+
+.login{
+    padding: 8px;
+    border: 5px;
+    border-color: black;
+    color: black;
+    border-style: solid;
+}
+
+.login:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.2,1.2);
+}
+
+.email{
+    margin-left: 17px;
+}
+

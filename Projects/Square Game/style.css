@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.sq{
+  height: 150px;
+  width: 150px;
+  border: 2px solid purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px 0 0;
+}
+.box{
+  height: 570px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

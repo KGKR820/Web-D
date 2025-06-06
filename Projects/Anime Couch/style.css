@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+body {
+  background-color: #140e00;
+}
+.navbar {
+  display: flex;
+}
+.start,
+.end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  background-color: #d52941;
+  color: white;
+  width: 100%;
+}
+.end {
+  justify-content: flex-end;
+}
+.start h1 {
+  margin-left: 40px;
+  margin-right: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  background-color: #d52941;
+  order: 2;
+}
+.start .A {
+  color: #fcd581;
+  background-color: #d52941;
+}
+.start a,
+.end a {
+  margin-right: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #d52941;
+}
+.start a:hover,
+.end a:hover,
+.end button:hover,
+.menu ul li a:hover {
+  color: black;
+  transition: 0.5s ease;
+}
+.end input {
+  background-color: white;
+  font-size: 15px;
+  margin: 20px 0px 20px 0px;
+  border: 1px double black;
+  border-radius: 5px;
+  text-shadow: 0.75px 0.75px grey;
+  order: 2;
+}
+.end .sign {
+  margin-right: 20px;
+  order: 1;
+}
+.end i {
+  background-color: #d52941;
+  position: relative;
+  left: 5px;
+  bottom: 2px;
+  font-size: 20px;
+}
+.menu {
+  background-color: #d52941;
+  height: 100%;
+  width: 160px;
+  transition: 0.5s ease;
+  position: absolute;
+  transition: 0.5s ease;
+  transform: translateX(-160px);
+}
+.menu h1 {
+  color: white;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  transition: 0.5s ease;
+}
+.check{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin: 15px 0px 0px 5px;
+  z-index: 2;
+  opacity: 0;
+}
+.toggle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  margin: 15px 0px 0px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.toggle i {
+  margin: 7.5px 0px 0px 7.5px;
+  color: white;
+  transition: 0.5s ease;
+}
+.check:checked ~ .menu {
+  transform: translateX(0);
+}

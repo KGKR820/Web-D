@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #0d0157;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+.navbar {
+  display: flex;
+  background-color: white;
+  position: sticky;
+  top : 0;
+  z-index:2;
+}
+.start,
+.end {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  background-color: white;
+  width: 100%;
+}
+.end {
+  justify-content: flex-end;
+}
+.start h1 {
+  margin-right: 20px;
+  margin-top: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: white;
+}
+.start .A {
+  color: pink;
+  background-color: white;
+}
+.start a,
+.end a {
+  margin-right: 20px;
+  margin-top: 15px;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: white;
+}
+.start a:hover,
+.end a:hover,
+.end button:hover {
+  color: pink;
+  transition: 0.5s ease;
+}
+.end input {
+  background-color: white;
+  font-size: 15px;
+  margin: 20px 0px 20px 0px;
+  border: 1px double black;
+  border-radius: 5px;
+  text-shadow: 0.75px 0.75px grey;
+  background-color: white;
+}
+i {
+  background-color: white;
+  position: relative;
+  left: 3px;
+  bottom: 2px;
+  font-size: 18px;
+}
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+.head {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 60px;
+  line-height: 1.2;
+  margin-right: 20px;
+}
+.text {
+  font-size: 19px;
+  color: pink;
+  margin-top: 20px;
+}
+.model {
+  border-radius: 16px;
+  object-fit: cover;
+  margin-left: 20px;
+}
+.shop-now {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: palevioletred;
+  border: 2px;
+  margin-left: 50px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+.shop-now:hover {
+  color: #0d0157;
+  transition: 0.5s ease;
+}
+.shop-now span {
+  background-color: palevioletred;
+}
+.shop-now i {
+  background-color: palevioletred;
+  position: relative;
+  top: 1px;
+}
+.button {
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.y {
+  background-color: white;
+  margin-top: 50px;
+  margin-left: 82px;
+  padding: 10px 10px;
+  border-radius: 25px;
+}
+.shopbox {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.boxs {
+  border: 2px solid black;
+  height: 300px;
+  width: 23%;
+  background-color: rgb(252, 251, 251);
+  padding: 20px 0px 15px;
+  margin: 20px;
+  border-radius: 25px;
+}
+.b1-img {
+  height: 200px;
+  background-size: cover;
+  background-color: pink;
+}
+.box-content {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.footer {
+  background-color: white;
+}
+.logo {
+  margin-left: 80px;
+}
+.copy-right {
+  text-align: center;
+  margin: 30px 0px 5px 0px;
+}

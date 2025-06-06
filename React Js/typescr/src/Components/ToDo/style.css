@@ -1,0 +1,11 @@
+*{
+    padding:0;
+    margin:0;
+
+}
+.listContainer{
+    width:100px;
+    display: flex;
+    justify-content: center;
+   margin:10px;
+}
